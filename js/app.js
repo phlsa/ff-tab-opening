@@ -70,6 +70,14 @@ $(document).ready(function() {
       $('.prototype-container').removeClass('slow');
     }
   });
+
+  // on load
+  var box = $('input[type=checkbox]');
+  if (box.is(':checked')) {
+    $('.prototype-container').addClass('slow');
+  } else {
+    $('.prototype-container').removeClass('slow');
+  }
 });
 
 
