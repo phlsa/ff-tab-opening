@@ -31,12 +31,20 @@ function openTabAtLastPosition(e) {
     }, 25);
 }
 
-function openTabNextToCurrentTab(win) {
+function openTabNextToCurrentTab() {
   var nt = newTab(false, true).addClass('shifted');
-  win.find('.selected').after(nt);
+  $('.type-3').find('.selected').after(nt);
   _.delay(function() {
     nt.removeClass('shifted');
   }, 25);
+}
+
+function openSelectedTabNextToCurrentTab() {
+  var nt = newTab(true);
+    $('.type-4 .selected').removeClass('selected').after(nt);
+    _.delay(function() {
+      nt.removeClass('small');
+    }, 25);
 }
 
 $(document).ready(function() {
@@ -44,16 +52,8 @@ $(document).ready(function() {
   $('button#ctrl-t').click(function(e) {
     $('.type-2').find('.plus').click();
   });
-  $('button#next-1').click(function(e) {
-    openTabNextToCurrentTab( $('.type-3') );
-  });
-  $('button#next-2').click(function(e) {
-    var nt = newTab(true);
-    $('.type-4 .selected').removeClass('selected').after(nt);
-    _.delay(function() {
-      nt.removeClass('small');
-    }, 25);
-  });
+  $('button#next-1').click(openTabNextToCurrentTab);
+  $('button#next-2').click(openSelectedTabNextToCurrentTab);
 });
 
 
