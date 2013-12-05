@@ -12,9 +12,8 @@ function newSmallTab() {
   return $('<div class="tab small"><span class="caption">+</span></div>');
 }
 
-$(document).ready(function() {
-  $('.plus').click(function(e) {
-    $('.selected').removeClass('selected');
+function openTabAtLastPosition(e) {
+  $(e.currentTarget).closest('.window').find('.selected').removeClass('selected');
     $(e.currentTarget).html(newTabContent()).removeClass('plus');
 
     // animate tab size
@@ -23,12 +22,13 @@ $(document).ready(function() {
     }, 25);
 
     // create new plus tab
+    var nt = newSmallTab();
+    $(e.currentTarget).after(nt);
     _.delay(function() {
-      var nt = newSmallTab();
-      $(e.currentTarget).after(nt);
-      _.delay(function() {
-        nt.addClass('plus');
-      }, 25);
+      nt.addClass('plus');
     }, 25);
-  });
+}
+
+$(document).ready(function() {
+  $('.plus').click(openTabAtLastPosition);
 });
