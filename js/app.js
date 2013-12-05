@@ -40,10 +40,10 @@ function openTabNextToCurrentTab() {
 }
 
 function openSelectedTabNextToCurrentTab() {
-  var nt = newTab(true);
+  var nt = newTab(true, false).addClass('extra-small');
   $('.type-4 .selected').removeClass('selected').after(nt);
   _.delay(function() {
-    nt.removeClass('small');
+    nt.removeClass('extra-small small');
   }, 25);
 }
 
@@ -61,6 +61,15 @@ $(document).ready(function() {
   $('button#next-1').click(openTabNextToCurrentTab);
   $('button#next-2').click(openSelectedTabNextToCurrentTab);
   $('button#overflow').click(openTabWithOverflow);
+
+  $('input[type=checkbox]').change(function(e) {
+    var box = $(e.currentTarget);
+    if (box.is(':checked')) {
+      $('.prototype-container').addClass('slow');
+    } else {
+      $('.prototype-container').removeClass('slow');
+    }
+  });
 });
 
 
