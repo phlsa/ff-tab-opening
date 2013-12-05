@@ -1,7 +1,7 @@
 .tab {
   transition-property: width, background-size, margin-left;
   transition-duration: 0.3s;
-  transition-timing-function: cubic-bezier(.17, .67, .44, .95);
+  transition-timing-function: cubic-bezier(.1, .6, .4, 1);
 }
 
 .tab .caption, .tab .close {
