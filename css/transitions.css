@@ -1,13 +1,13 @@
 .tab {
   transition-property: width, background-size, margin-left;
-  transition-duration: 0.3s;
+  transition-duration: 0.2s;
   transition-timing-function: cubic-bezier(.29, .5, .55, .97);
 }
 
 .tab .caption, .tab .close {
   transition-property: opacity;
-  transition-duration: 0.3s;
-  transition-delay: 0.15s;
+  transition-duration: 0.2s;
+  transition-delay: 0.1s;
   transition-timing-function: ease;
 }
 
