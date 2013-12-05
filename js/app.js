@@ -47,6 +47,13 @@ $(document).ready(function() {
   $('button#next-1').click(function(e) {
     openTabNextToCurrentTab( $('.type-3') );
   });
+  $('button#next-2').click(function(e) {
+    var nt = newTab(true);
+    $('.type-4 .selected').removeClass('selected').after(nt);
+    _.delay(function() {
+      nt.removeClass('small');
+    }, 25);
+  });
 });
 
 
