@@ -26,11 +26,15 @@ p {
 .tabstrip {
   position: absolute;
   float: left;
-  width: 530px;
+  width: 630px;
   height: 40px;
   left: 150px;
   top: 35px;
   padding-left: 24px;
+}
+
+.tabstrip.no-overflow {
+  width: 530px;
   overflow: hidden;
 }
 
