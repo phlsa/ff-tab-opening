@@ -11,6 +11,11 @@ h2 {
   margin: 20px 0 0 60px;
 }
 
+p {
+  margin-left: 60px;
+  width: 80%;
+}
+
 .window {
   position: relative;
   width: 852px;
