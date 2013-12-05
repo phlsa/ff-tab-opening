@@ -31,4 +31,7 @@ function openTabAtLastPosition(e) {
 
 $(document).ready(function() {
   $('.plus').click(openTabAtLastPosition);
+  $('button#ctrl-t').click(function(e) {
+    $('.type-2').find('.plus').click();
+  });
 });
