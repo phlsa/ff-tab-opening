@@ -1,0 +1,101 @@
+* {
+  background-size: 100%;
+  font-family: "Lucida Grande", "Lucida Sans Unicode", sans-serif;
+}
+
+.prototype-container {
+  position: relative;
+}
+
+h2 {
+  margin: 20px 0 0 60px;
+}
+
+.window {
+  position: relative;
+  width: 852px;
+  height: 191px;
+  background-image: url('../img/window.png');
+}
+
+.tabstrip {
+  position: absolute;
+  float: left;
+  width: 630px;
+  height: 40px;
+  left: 150px;
+  top: 35px;
+}
+
+.tab {
+  float: left;
+  width: 200px;
+  height: 100%;
+  text-align: center;
+  position: relative;
+  background-repeat: no-repeat,
+                     no-repeat,
+                     no-repeat;
+  background-position: left,
+                       right,
+                       center;
+  background-size: auto 100%,
+                   auto 100%,
+                   152px 100%;
+  
+  margin-left: -24px;
+}
+
+.tab.selected {
+  background-image: url('../img/left.png'),
+                    url('../img/right.png'),
+                    url('../img/middle.png');
+  z-index: 99;
+}
+
+.tab:not(.selected):hover, .tab.hover-freeze {
+  background-image: url('../img/left-hover.png'),
+                    url('../img/right-hover.png'),
+                    url('../img/middle-hover.png');
+}
+
+.caption {
+  display: block;
+  margin-top: 18px;
+  font-size: 11px;
+  font-weight: bold;
+  color: #666;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.5);
+}
+
+.tab.selected .caption, .tab:hover .caption {
+  color: #333;
+}
+
+.close {
+  width: 8px;
+  height: 8px;
+  background-image: url('../img/close-inactive.png');
+  position: absolute;
+  right: 22px;
+  top: 21px;
+}
+.tab.selected .close {
+  background-image: url('../img/close.png');
+}
+
+.tab.small {
+  width: 60px;
+  background-size: auto 100%,
+                   auto 100%,
+                   10px 100%;
+}
+.tab.small .caption, .tab.small .close {
+  opacity: 0;
+}
+
+.tab.small.plus .caption {
+  opacity: 1;
+  font-size: 18px;
+  margin-top: 14px;
+}

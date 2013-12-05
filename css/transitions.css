@@ -1,0 +1,12 @@
+.tab {
+  transition-property: width, background-size;
+  transition-duration: 0.4s;
+  transition-timing-function: ease;
+}
+
+.tab .caption, .tab .close {
+  transition-property: opacity;
+  transition-duration: 0.4s;
+  transition-delay: 0.2s;
+  transition-timing-function: ease;
+}
