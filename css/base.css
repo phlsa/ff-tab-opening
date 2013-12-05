@@ -21,10 +21,12 @@ h2 {
 .tabstrip {
   position: absolute;
   float: left;
-  width: 630px;
+  width: 526px;
   height: 40px;
   left: 150px;
   top: 35px;
+  padding-left: 24px;
+  overflow: hidden;
 }
 
 .tab {
@@ -60,7 +62,7 @@ h2 {
                     url('../img/middle-hover.png');
 }
 
-.tab:not(.selected):not(:hover) {
+.tab:not(.selected):not(:hover):not(:last-child) {
   background-image: url('../img/seperator.png');
   background-position: 186px 0;
 }
@@ -108,4 +110,23 @@ h2 {
   opacity: 1;
   font-size: 18px;
   margin-top: 14px;
+}
+
+.overflow {
+  position: absolute;
+  left: 699px;
+  top: 36px;
+  padding: 13px 0 5px 10px;
+  width: 200px;
+  background-image: url('../img/overflow-seperator.png');
+  background-repeat: no-repeat;
+  background-size: 2px auto;
+  z-index: 150;
+}
+
+.tab-helper {
+  position: absolute;
+  float: left;
+  width: 1000px;
+  height: 40px;
 }

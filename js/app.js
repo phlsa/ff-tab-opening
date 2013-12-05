@@ -41,10 +41,16 @@ function openTabNextToCurrentTab() {
 
 function openSelectedTabNextToCurrentTab() {
   var nt = newTab(true);
-    $('.type-4 .selected').removeClass('selected').after(nt);
-    _.delay(function() {
-      nt.removeClass('small');
-    }, 25);
+  $('.type-4 .selected').removeClass('selected').after(nt);
+  _.delay(function() {
+    nt.removeClass('small');
+  }, 25);
+}
+
+function openTabWithOverflow() {
+  var nt = newTab(true, true);
+  $('.type-5 .tab-helper').append(nt);
+  $('.type-5 .tab:first').removeClass('selected').css({'margin-left':'-200px'});
 }
 
 $(document).ready(function() {
@@ -54,6 +60,7 @@ $(document).ready(function() {
   });
   $('button#next-1').click(openTabNextToCurrentTab);
   $('button#next-2').click(openSelectedTabNextToCurrentTab);
+  $('button#overflow').click(openTabWithOverflow);
 });
 
 
