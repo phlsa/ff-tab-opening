@@ -64,6 +64,10 @@ h2 {
   background-position: 186px 0;
 }
 
+.tab.shifted {
+  margin-left: -200px;
+}
+
 .caption {
   display: block;
   margin-top: 18px;

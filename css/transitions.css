@@ -1,5 +1,5 @@
 .tab {
-  transition-property: width, background-size;
+  transition-property: width, background-size, margin-left;
   transition-duration: 0.4s;
   transition-timing-function: ease;
 }
@@ -9,4 +9,12 @@
   transition-duration: 0.4s;
   transition-delay: 0.2s;
   transition-timing-function: ease;
+}
+
+.slow .tab {
+  transition-duration: 3s;
+}
+.slow .tab .caption, .slow .tab .close {
+  transition-duration: 3s;
+  transition-delay: 1.5s;
 }

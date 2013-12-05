@@ -1,7 +1,9 @@
-function newTab( selected ) {
+function newTab( selected, expanded ) {
   var sel = "";
   if (selected) sel = "selected";
-  return $('<div class="tab small '+sel+'">'+newTabContent()+'</div>');
+  var small = "small";
+  if (expanded) small = ""
+  return $('<div class="tab '+small+' '+sel+'">'+newTabContent()+'</div>');
 }
 
 function newTabContent() {
@@ -29,9 +31,25 @@ function openTabAtLastPosition(e) {
     }, 25);
 }
 
+function openTabNextToCurrentTab(win) {
+  var nt = newTab(false, true).addClass('shifted');
+  win.find('.selected').after(nt);
+  _.delay(function() {
+    nt.removeClass('shifted');
+  }, 25);
+}
+
 $(document).ready(function() {
   $('.plus').click(openTabAtLastPosition);
   $('button#ctrl-t').click(function(e) {
     $('.type-2').find('.plus').click();
   });
+  $('button#next-1').click(function(e) {
+    openTabNextToCurrentTab( $('.type-3') );
+  });
 });
+
+
+
+
+
