@@ -59,6 +59,11 @@ h2 {
                     url('../img/middle-hover.png');
 }
 
+.tab:not(.selected):not(:hover) {
+  background-image: url('../img/seperator.png');
+  background-position: 186px 0;
+}
+
 .caption {
   display: block;
   margin-top: 18px;
