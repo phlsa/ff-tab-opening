@@ -21,7 +21,7 @@ h2 {
 .tabstrip {
   position: absolute;
   float: left;
-  width: 526px;
+  width: 530px;
   height: 40px;
   left: 150px;
   top: 35px;
@@ -114,7 +114,7 @@ h2 {
 
 .overflow {
   position: absolute;
-  left: 699px;
+  left: 704px;
   top: 36px;
   padding: 13px 0 5px 10px;
   width: 200px;
