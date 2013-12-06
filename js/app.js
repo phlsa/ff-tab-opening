@@ -68,6 +68,9 @@ function openTabWithoutOverflow() {
     left: pos.left+'px'
   });
   tab.closest('.tabstrip').append(nt);
+
+  var timeout = 200;
+  if (box.is(':checked')) timeout = 3000;
   _.delay(function() {
     nt.removeClass('hover-freeze');
   }, 200);
