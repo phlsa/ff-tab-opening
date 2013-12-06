@@ -16,19 +16,19 @@ function newSmallTab() {
 
 function openTabAtLastPosition(e) {
   $(e.currentTarget).closest('.window').find('.selected').removeClass('selected');
-    $(e.currentTarget).html(newTabContent()).removeClass('plus');
+  $(e.currentTarget).html(newTabContent()).removeClass('plus');
 
-    // animate tab size
-    _.delay(function(){
-      $(e.currentTarget).removeClass('small plus').addClass('selected');
-    }, 25);
+  // animate tab size
+  _.delay(function(){
+    $(e.currentTarget).removeClass('small plus').addClass('selected');
+  }, 25);
 
-    // create new plus tab
-    var nt = newSmallTab();
-    $(e.currentTarget).after(nt);
-    _.delay(function() {
-      nt.addClass('plus');
-    }, 25);
+  // create new plus tab
+  var nt = newSmallTab();
+  $(e.currentTarget).after(nt);
+  _.delay(function() {
+    nt.addClass('plus');
+  }, 25);
 }
 
 function openTabNextToCurrentTab() {
@@ -53,14 +53,35 @@ function openTabWithOverflow() {
   $('.type-5 .tab:first').removeClass('selected').css({'margin-left':'-200px'});
 }
 
+function openTabWithoutOverflow() {
+  var tab = $('#almost-overflow');
+  var pos = tab.position();
+  console.log(pos);
+  tab.closest('.window').find('.tab').removeClass('selected');
+  tab.removeClass('plus').addClass('selected').html( newTabContent() );
+  _.delay(function() {
+    tab.removeClass('small');
+    tab.closest('.window').find('.tab').addClass('medium');
+  }, 25);
+  var nt = newSmallTab().addClass('plus hover-freeze').css({
+    position: 'absolute',
+    left: pos.left+'px'
+  });
+  tab.closest('.tabstrip').append(nt);
+  _.delay(function() {
+    nt.removeClass('hover-freeze');
+  }, 200);
+}
+
 $(document).ready(function() {
-  $('.plus').click(openTabAtLastPosition);
+  $('.plus:not(#almost-overflow)').click(openTabAtLastPosition);
   $('button#ctrl-t').click(function(e) {
     $('.type-2').find('.plus').click();
   });
   $('button#next-1').click(openTabNextToCurrentTab);
   $('button#next-2').click(openSelectedTabNextToCurrentTab);
   $('button#overflow').click(openTabWithOverflow);
+  $('#almost-overflow').click(openTabWithoutOverflow);
 
   $('input[type=checkbox]').change(function(e) {
     var box = $(e.currentTarget);

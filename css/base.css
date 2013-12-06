@@ -105,6 +105,17 @@ p {
   background-image: url('../img/close.png');
 }
 
+.tab.medium {
+  width: 156px;
+  background-size: auto 100%,
+                   auto 100%,
+                   106px 100%;
+}
+.tab.medium:not(.selected):not(:hover):not(:last-child) {
+  background-image: url('../img/seperator.png');
+  background-position: 142px 0;
+}
+
 .tab.small {
   width: 60px;
   background-size: auto 100%,
